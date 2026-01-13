@@ -1,0 +1,102 @@
+/* Container */
+.new-collections {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title */
+.new-collections h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Underline */
+.new-collections hr {
+    width: 50px;
+    height: 3px;
+    background-color: #ff4141;
+    border: none;
+    margin: 10px auto 20px;
+}
+
+/* Grid layout for new collection items */
+.collections-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* wrap items */
+    justify-content: center;
+    /* center grid */
+    gap: 30px;
+    /* space between cards */
+}
+
+/* Individual card */
+.collection-card {
+    flex: 0 0 220px;
+    /* fixed width */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+/* Card hover effect */
+.collection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.collection-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+/* Product name */
+.collection-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Price */
+.collection-card .price {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-card .old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+}
+
+.collection-card .new-price {
+    color: #ff4141;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Responsive for tablet */
+@media screen and (max-width: 768px) {
+    .collection-card {
+        flex: 0 0 45%;
+        /* 2 cards per row */
+    }
+}
+
+/* Responsive for mobile */
+@media screen and (max-width: 480px) {
+    .collection-card {
+        flex: 0 0 90%;
+        /* 1 card per row */
+    }
+}

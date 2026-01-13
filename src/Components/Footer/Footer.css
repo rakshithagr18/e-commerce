@@ -1,0 +1,197 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* Reduced from 50px */
+    padding: 30px 0;
+    /* Reduced from 40px */
+}
+
+/* LOGO SECTION */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Reduced spacing between logo icon and text */
+}
+
+.footer-logo p {
+    color: #383838;
+    font-size: 32px;
+    /* Reduced from 40px */
+    font-weight: 700;
+}
+
+/* NAV LINKS */
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    /* Reduced from 50px */
+    color: #252525;
+    font-size: 14px;
+    /* Slightly smaller */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    cursor: pointer;
+}
+
+/* SOCIAL ICONS */
+.footer-social-icon {
+    display: flex;
+    gap: 15px;
+    /* Reduced from 20px */
+}
+
+/* ICON BOX */
+.footer-icons-container {
+    width: 50px;
+    /* Reduced from 60px */
+    height: 50px;
+    /* Reduced from 60px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fbfbfb;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-icons-container img {
+    width: 24px;
+    /* Reduced from 28px */
+    height: 24px;
+    /* Reduced from 28px */
+    object-fit: contain;
+}
+
+.footer-icons-container:hover {
+    background: #000;
+}
+
+.footer-icons-container:hover img {
+    filter: invert(1);
+}
+
+/* COPYRIGHT */
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* Reduced from 30px */
+    width: 100%;
+    margin-bottom: 20px;
+    /* Reduced from 30px */
+    color: #1a1a1a;
+    font-size: 14px;
+    /* Slightly smaller */
+}
+
+.footer-copyright hr {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    height: 2px;
+    /* Reduced from 3px */
+    background: #c7c7c7;
+}
+
+/* ========================= */
+/* 📱 MOBILE OPTIMIZATION */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .footer {
+        gap: 20px;
+        /* Reduced from 35px */
+        padding: 20px 15px;
+        /* Reduced from 30px 20px */
+    }
+
+    .footer-logo {
+        flex-direction: column;
+        gap: 8px;
+        /* Reduced from 10px */
+    }
+
+    .footer-logo p {
+        font-size: 28px;
+        /* Slightly smaller */
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        /* Reduced from 20px */
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .footer-social-icon {
+        gap: 10px;
+        /* Reduced from 15px */
+    }
+
+    .footer-icons-container {
+        width: 45px;
+        /* Reduced from 50px */
+        height: 45px;
+    }
+
+    .footer-icons-container img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .footer-copyright {
+        font-size: 12px;
+        /* Smaller for mobile */
+        gap: 15px;
+        /* Reduced */
+        text-align: center;
+    }
+
+    .footer-copyright hr {
+        width: 90%;
+    }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .footer-logo p {
+        font-size: 24px;
+        /* Smaller for very small screens */
+    }
+
+    .footer-links {
+        gap: 10px;
+        /* Reduced */
+        font-size: 12px;
+    }
+
+    .footer-icons-container {
+        width: 40px;
+        /* Smaller icons */
+        height: 40px;
+    }
+
+    .footer-icons-container img {
+        width: 20px;
+        height: 20px;
+    }
+}
