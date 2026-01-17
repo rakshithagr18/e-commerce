@@ -1,78 +1,173 @@
+/* ========================= */
+/* BASE */
+/* ========================= */
 .shop-category {
     width: 100%;
-    min-height: 600px;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
+    background: #ffffff;
 }
 
 .banner-container {
     width: 100%;
-    display: block;
 }
 
+/* ========================= */
+/* SORT BAR */
+/* ========================= */
 .shop-category-indexSort {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
-    padding: 0 20px;
+    padding: 15px 20px;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .shop-category-indexSort p {
-    margin: 0;
     font-size: 14px;
     color: #555;
 }
 
-.shop-category-indexSort p span {
+.shop-category-indexSort span {
     font-weight: 600;
+}
+
+/* ========================= */
+/* SORT DROPDOWN */
+/* ========================= */
+.sort-wrapper {
+    position: relative;
 }
 
 .shopcategory-sort {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 8px 15px;
+    gap: 8px;
+    padding: 8px 14px;
     border: 1px solid #d3d3d3;
-    border-radius: 4px;
-    background-color: #fff;
+    border-radius: 6px;
+    background: #fff;
     cursor: pointer;
     font-size: 14px;
+    user-select: none;
 }
 
 .shopcategory-sort img {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
+    width: 14px;
+    transition: transform 0.3s ease;
 }
 
+/* rotate icon when open */
+.sort-wrapper .shopcategory-sort img {
+    transform: rotate(0deg);
+}
+
+.sort-wrapper .sort-dropdown+.shopcategory-sort img {
+    transform: rotate(180deg);
+}
+
+/* ========================= */
+/* DROPDOWN LIST */
+/* ========================= */
+.sort-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    padding: 8px 0;
+    z-index: 50;
+
+    /* scroll */
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.sort-dropdown li {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sort-dropdown li:hover {
+    background: #f9f0f0;
+    color: #ff4141;
+}
+
+/* ========================= */
+/* PRODUCTS GRID */
+/* ========================= */
 .shop-category-products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
     padding: 20px;
-    width: 100%;
     box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
-    .shop-category-products {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* ========================= */
+/* PRODUCT CARD */
+.shop-category-products .item-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1;
+    /* make card square */
 }
 
-@media (max-width: 768px) {
-    .shop-category-products {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.item-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* image fills card and stays square */
+    border-bottom: 1px solid #e0e0e0;
+}
 
+/* Optional: product info below image */
+.item-card .item-info {
+    padding: 10px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.item-card .item-info h3 {
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: 600;
+    color: #222;
+}
+
+.item-card .item-info .price {
+    font-size: 14px;
+    color: #ff4141;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+@media (max-width: 768px) {
     .shop-category-indexSort {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+    }
+
+    .sort-wrapper {
+        width: 100%;
+    }
+
+    .shopcategory-sort {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .sort-dropdown {
+        width: 100%;
+        right: 0;
     }
 }
 

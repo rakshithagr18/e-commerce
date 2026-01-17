@@ -1,13 +1,13 @@
 /* ========================= */
-/* NAVBAR BASE */
+/* NAVBAR BANNER */
 /* ========================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 24px;
-    background: white;
-    box-shadow: 0 1px 3px -2px black;
+    background: linear-gradient(90deg, #ff4141, #ff7a41);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 10;
 }
@@ -24,165 +24,123 @@
 }
 
 .nav-logo p {
-    color: #171717;
+    color: white;
     font-size: 20px;
     font-weight: 600;
 }
 
-/* LOGIN + CART + HAMBURGER CONTAINER */
+/* LOGIN + CART + HAMBURGER */
 .nav-login-cart {
     display: flex;
     align-items: center;
     gap: 15px;
-    /* Space between login, cart, hamburger */
 }
 
 /* LOGIN BUTTON */
 .nav-login-cart button {
     width: 120px;
     height: 42px;
-    border: 1px solid #7a7a7a;
+    border: none;
     border-radius: 75px;
     background: white;
+    color: #ff4141;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
-.nav-login-cart button:active {
-    background: #f3f3f3;
-}
-
-/* CART ICON */
+/* CART */
 .nav-cart {
     position: relative;
-    display: flex;
-    align-items: center;
 }
 
 .nav-cart img {
     width: 32px;
+    filter: brightness(0) invert(1);
 }
 
-/* CART COUNT BADGE */
+/* CART COUNT */
 .cart-count {
     position: absolute;
     top: -6px;
     right: -8px;
     width: 20px;
     height: 20px;
+    background: white;
+    color: #ff4141;
     font-size: 12px;
     font-weight: 600;
-    color: white;
-    background: #FF4141;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* HAMBURGER MENU */
+/* HAMBURGER */
 .hamburger {
-    display: block;
-    /* Always visible */
     font-size: 28px;
     cursor: pointer;
-    user-select: none;
+    color: white;
 }
 
-/* NAV MENU DROPDOWN */
-.nav-menu {
+/* ========================= */
+/* DROPDOWN MENU */
+/* ========================= */
+.nav-menu-dropdown {
     position: absolute;
     top: 70px;
     right: 16px;
     width: 220px;
     background: white;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     display: none;
+    flex-direction: column;
     z-index: 20;
 }
 
-.nav-menu.active {
+.nav-menu-dropdown.active {
     display: flex;
 }
 
-/* MENU ITEMS */
-.nav-menu li {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
+.nav-menu-dropdown li {
+    list-style: none;
 }
 
-.nav-menu li a {
+.nav-menu-dropdown li a {
+    display: block;
+    padding: 16px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
     text-decoration: none;
-    color: #626262;
-    font-weight: 500;
-    font-size: 16px;
+    border-radius: 8px;
 }
 
-.nav-menu li:hover {
-    color: #FF4141;
-}
-
-.nav-menu li hr {
-    border: none;
-    width: 80%;
-    height: 3px;
-    border-radius: 10px;
-    background: #FF4141;
+.nav-menu-dropdown li a:hover {
+    background: #fff1f1;
+    color: #ff4141;
 }
 
 /* ========================= */
-/* RESPONSIVE TABLET */
-/* ========================= */
-@media (max-width: 1024px) {
-    .nav-menu {
-        width: 200px;
-        top: 60px;
-        right: 12px;
-        padding: 16px;
-    }
-
-    .nav-login-cart button {
-        width: 110px;
-        height: 38px;
-        font-size: 14px;
-    }
-}
-
-/* ========================= */
-/* RESPONSIVE MOBILE */
+/* MOBILE */
 /* ========================= */
 @media (max-width: 768px) {
-    .nav-menu {
-        width: 180px;
-        top: 55px;
-        right: 10px;
-        padding: 12px;
+    .nav-menu-dropdown {
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .nav-menu-dropdown li a {
+        font-size: 16px;
+        padding: 18px 20px;
     }
 
     .nav-login-cart button {
         width: 100px;
         height: 36px;
-        font-size: 13px;
-    }
-
-    .nav-cart img {
-        width: 28px;
-    }
-
-    .cart-count {
-        width: 18px;
-        height: 18px;
-        font-size: 11px;
-        top: -5px;
-        right: -5px;
+        font-size: 14px;
     }
 }

@@ -14,7 +14,7 @@
     /* Reduced from 150px */
     padding: 40px 30px;
     /* Reduced from 60px 40px */
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    background: linear-gradient(180deg, #fde1ff 0%, aliceblue 60%);
     gap: 40px;
     /* Reduced from 30px */
     box-sizing: border-box;

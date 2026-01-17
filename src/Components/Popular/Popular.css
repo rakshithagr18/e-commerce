@@ -1,135 +1,151 @@
+/* ======================== */
+/* POPULAR SECTION STYLES */
+/* ======================== */
+
 /* Container */
 .popular {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     text-align: center;
+    background: transparent;
+    margin-bottom: 40px;
 }
 
 /* Title */
 .popular h1 {
     font-size: 28px;
-    margin-bottom: 10px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 /* Underline */
 .popular hr {
     width: 50px;
-    height: 3px;
-    background-color: #ff4141;
+    height: 4px;
+    background-color: black;
     border: none;
-    margin: 10px auto 20px;
+    margin: 14px auto 14px;
 }
 
-/* Row layout for cards - single horizontal row */
+/* Row layout for cards */
 .popular-row {
     display: flex;
-    flex-wrap: nowrap;
-    /* no wrapping - all in one row */
-    justify-content: flex-start;
-    /* align cards to start */
-    gap: 40px;
-    /* space between cards */
-    overflow-x: auto;
-    /* allow horizontal scroll if too many cards */
-    padding-bottom: 10px;
-    /* space for scrollbar */
-    scroll-behavior: smooth;
-    /* smooth scroll effect */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Optional: hide scrollbar for a cleaner look */
-.popular-row::-webkit-scrollbar {
-    display: none;
-}
-
-.popular-row {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
-
-/* Card */
+/* Individual Card */
 .popular-card {
-    flex: 0 0 220px;
-    /* fixed width for each card */
-    min-height: 380px;
+    width: 220px;
+    /* increased width */
+    height: 220px;
+    /* square card */
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    /* solid white background */
+    border-radius: 12px;
     padding: 15px;
     text-align: center;
-    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ddd;
+    cursor: pointer;
 }
 
 /* Image container */
 .image-container {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    /* increased image size */
+    height: 140px;
+    /* square image */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* Product name */
+/* Hover effect */
+.popular-card:hover {
+    transform: translateY(-8px);
+    /* lifts card */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    /* stronger shadow */
+}
+
+.popular-card:hover .image-container img {
+    transform: scale(1.05);
+    /* subtle zoom */
+}
+
+/* Product Name */
 .popular-card h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 14px;
     font-weight: 600;
+    margin: 0;
 }
 
 /* Price */
 .popular-card .price {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
 }
 
 .popular-card .old-price {
     text-decoration: line-through;
     color: #888;
-    font-size: 14px;
 }
 
 .popular-card .new-price {
-    color: #ff4141;
-    font-size: 16px;
+    color: black;
     font-weight: 700;
 }
 
-/* Hover effect */
-.popular-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+/* ======================== */
+/* RESPONSIVE STYLES */
+/* ======================== */
 
-/* Responsive for tablets */
+/* Tablets */
 @media screen and (max-width: 768px) {
     .popular-card {
-        flex: 0 0 45%;
-        /* 2 cards per row */
+        width: 48%;
+        height: 200px;
     }
 
-    .popular-row {
-        flex-wrap: wrap;
-        /* allow wrapping on smaller screens */
-        gap: 10px;
+    .image-container {
+        width: 120px;
+        height: 120px;
     }
 }
 
-/* Responsive for mobile */
+/* Mobile */
 @media screen and (max-width: 480px) {
     .popular-card {
-        flex: 0 0 90%;
-        /* 1 card per row */
+        width: 80%;
+        height: 180px;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 100px;
     }
 }

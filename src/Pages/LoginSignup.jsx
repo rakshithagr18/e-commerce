@@ -46,11 +46,8 @@ const LoginSignup = () => {
         console.log(isLogin ? 'Login data:' : 'Signup data:', formData);
         alert((isLogin ? 'Login' : 'Signup') + ' successful!');
 
-        // Reset form
-        setTimeout(() => {
-            setFormData({ name: '', email: '', password: '' });
-            setAgreeToTerms(false);
-        }, 1500);
+        // NOTE: Form does NOT auto-close now
+        // Form fields are kept for convenience
     };
 
     const toggleForm = () => {
@@ -63,6 +60,7 @@ const LoginSignup = () => {
         <div className='loginsignup'>
             <div className='loginsignup-container'>
                 <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
+
                 <div className='loginsignup-fields'>
                     {!isLogin && (
                         <input
@@ -89,15 +87,15 @@ const LoginSignup = () => {
                     />
                 </div>
 
+                {/* Forgot password as blue text */}
                 {isLogin && (
                     <div className='loginsignup-forgot'>
-                        <button
-                            type='button'
-                            onClick={() => alert('Password reset link sent to your email')}
+                        <span
                             className='forgot-password-btn'
+                            onClick={() => alert('Password reset link sent to your email')}
                         >
                             Forgot password?
-                        </button>
+                        </span>
                     </div>
                 )}
 
